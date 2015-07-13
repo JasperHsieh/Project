@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jasper page</title>
+</head>
+<?php
+
+include "checkLogin.php";
+if($logged == true){
+	echo "You has logged in as ".$user['Username']."<br>";
+	echo "<a href='logout.php'>Logout</a> <br>";
+	die("");
+}
+
+?>
+<body>
+
+	<h1>Login</h1>
+
+	<?php
+		//echo "php works!!!<br>";
+		//include "connectDB.php";
+	?>
+	<form action="submit.php" method="post">
+		<table>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="name" style="padding: 4px"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="text" name="password" style="padding: 4px"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Submit"></td>
+			</tr>
+		</table>
+	</form>
+	<h5>
+		No account? <a href='register.html'>Register!</a> 
+	</h5>
+
+
+</body>
+</html>
